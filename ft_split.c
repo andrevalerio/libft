@@ -1,0 +1,87 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 23:03:03 by avalerio          #+#    #+#             */
+/*   Updated: 2021/02/17 23:03:06 by avalerio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static int	count_wds(char const *str, char c)
+{
+	int words;
+	int is_word;
+
+	words = 0;
+	is_word = 0;
+	while (*str)
+	{
+		if (*str == c)
+			is_word = 0;
+		else if (is_word == 0)
+		{
+			is_word = 1;
+			words++;
+		}
+		str++;
+	}
+	return (words);
+}
+
+static int	w_len(char const *str, char c)
+{
+	int length;
+
+	length = 0;
+	while (*str != c && *str)
+	{
+		length++;
+		str++;
+	}
+	return (length);
+}
+
+static void	*ft_free(char **words)
+{
+	int i;
+
+	i = 0;
+	while (words[i])
+		free(words[i++]);
+	free(words);
+	return (NULL);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	int		i;
+	int		j;
+	char	**wds;
+
+	i = 0;
+	j = 0;
+	if (!s || !(wds = (char **)malloc(sizeof(char *) * (count_wds(s, c) + 1))))
+		return (NULL);
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s != c && *s)
+		{
+			if (!(wds[i] = (char *)malloc(sizeof(char) * (w_len(s, c) + 1))))
+				return (ft_free(wds));
+			while (*s && *s != c)
+				wds[i][j++] = (char)*s++;
+			wds[i][j] = '\0';
+			i++;
+			j = 0;
+		}
+	}
+	wds[i] = NULL;
+	return (wds);
+}
