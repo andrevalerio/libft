@@ -110,3 +110,77 @@ Parameters | 1. The integer to output. 2. The file descriptor on which to write.
 Return value | None.
 External functs. | write
 Description | Outputs the integer ’n’ to the given file descriptor.
+
+## Bonus part
+
+Function name | ft_lstnew
+------------ | -------------
+Prototype | t_list *ft_lstnew(void *content);
+Parameters | 1. The content to create the new element with.
+Return value | The new element.
+External functs. | malloc
+Description | Allocates (with malloc(3)) and returns a new element. The variable ’content’ is initializedwith the value of the parameter ’content’. The variable ’next’ is initialized to NULL.
+
+Function name | ft_lstadd_front
+------------ | -------------
+Prototype | void ft_lstadd_front(t_list **lst, t_list *new);
+Parameters | 1. The address of a pointer to the first link of a list. 2. The address of a pointer to the element to be added to the list.
+Return value | None
+External functs. | None
+Description | Adds the element ’new’ at the beginning of the list.
+
+Function name | ft_lstsize
+------------ | -------------
+Prototype | int ft_lstsize(t_list *lst);
+Parameters | 1. The beginning of the list.
+Return value | Length of the list.
+External functs. | None
+Description | Counts the number of elements in a list.
+
+Function name | ft_lstlast
+------------ | -------------
+Prototype | t_list *ft_lstlast(t_list *lst);
+Parameters | 1. The beginning of the list.
+Return value | Last element of the list.
+External functs. | None
+Description | Returns the last element of the list.
+
+Function name | ft_lstadd_back
+------------ | -------------
+Prototype | void ft_lstadd_back(t_list **lst, t_list *new);
+Parameters | 1. The address of a pointer to the first link of a list. 2. The address of a pointer to the element to be added to the list.
+Return value | None
+External functs. | None
+Description | Adds the element ’new’ at the end of the list.
+
+Function name | ft_lstdelone
+------------ | -------------
+Prototype | void ft_lstdelone(t_list *lst, void (*del)(void*));
+Parameters | 1. The element to free. 2. The address of the function used to delete the content.
+Return value | None
+External functs. | free
+Description | Takes as a parameter an element and frees the memory of the element’s content using the function ’del’ given as a parameter and free the element. The memory of ’next’ must not be freed.
+
+Function name | ft_lstclear
+------------ | -------------
+Prototype | void ft_lstclear(t_list **lst, void (*del)(void*));
+Parameters | 1. The adress of a pointer to an element. 2. The adress of the function used to delete thecontent of the element.
+Return value | None
+External functs. | free
+Description | Deletes and frees the given element and every successor of that element, using the function ’del’ and free(3). Finally, the pointer to the list must be set to NULL.
+
+Function name | ft_lstiter
+------------ | -------------
+Prototype | void ft_lstiter(t_list *lst, void (*f)(void *));
+Parameters | 1. The adress of a pointer to an element. 2. The adress of the function used to iterate on the list.
+Return value | None
+External functs. | None
+Description | Iterates the list ’lst’ and applies the function ’f’ to the content of each element.
+
+Function name | ft_lstmap
+------------ | -------------
+Prototype | t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
+Parameters | 1. The adress of a pointer to an element. 2. The adress of the function used to iterate on the list. 3. The adress of the function used to delete the content of an element if needed
+Return value | The new list.  NULL if the allocation fails.
+External functs. | malloc, free
+Description | Iterates the list ’lst’ and applies the function ’f’ to the content of each element.  Creates a new list resulting of the successive applications of the function ’f’.  The ’del’ function is used to delete the content of an element if needed.
