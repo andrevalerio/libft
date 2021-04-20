@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 23:03:03 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/17 23:03:06 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:51:07 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	count_wds(char const *str, char c)
 {
-	int words;
-	int is_word;
+	int	words;
+	int	is_word;
 
 	words = 0;
 	is_word = 0;
@@ -35,7 +35,7 @@ static int	count_wds(char const *str, char c)
 
 static int	w_len(char const *str, char c)
 {
-	int length;
+	int	length;
 
 	length = 0;
 	while (*str != c && *str)
@@ -48,7 +48,7 @@ static int	w_len(char const *str, char c)
 
 static void	*ft_free(char **words)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (words[i])
@@ -57,7 +57,7 @@ static void	*ft_free(char **words)
 	return (NULL);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -65,7 +65,8 @@ char		**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!s || !(wds = (char **)malloc(sizeof(char *) * (count_wds(s, c) + 1))))
+	wds = (char **)malloc(sizeof(char *) * (count_wds(s, c) + 1));
+	if (!s || wds == NULL)
 		return (NULL);
 	while (*s)
 	{
@@ -73,7 +74,8 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s != c && *s)
 		{
-			if (!(wds[i] = (char *)malloc(sizeof(char) * (w_len(s, c) + 1))))
+			wds[i] = (char *)malloc(sizeof(char) * (w_len(s, c) + 1));
+			if (wds[i] == NULL)
 				return (ft_free(wds));
 			while (*s && *s != c)
 				wds[i][j++] = (char)*s++;

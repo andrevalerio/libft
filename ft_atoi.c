@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 00:01:48 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/19 13:52:11 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:45:59 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int minus;
-	int number;
+	int	minus;
+	int	number;
 
 	number = 0;
 	minus = 1;
-	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n' || *nptr == '\r' ||
-	*nptr == '\t' || *nptr == '\v')
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n' || *nptr == '\r'
+		|| *nptr == '\t' || *nptr == '\v')
 		nptr++;
 	if (*nptr == '-')
 	{
