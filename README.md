@@ -2,6 +2,12 @@
 
 A C code library with my own implementation of some Libc functions and other additional ones.
 
+## Testers
+- https://github.com/alelievr/libft-unit-test
+- https://github.com/jtoty/Libftest
+- https://github.com/ska42/libft-war-machine
+- https://github.com/Tripouille/libftTester
+
 ## Part 1 - Libc functions
 
 - [memset](https://www.man7.org/linux/man-pages/man3/memset.3.html)
