@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 20:36:43 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/17 22:39:35 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:34:10 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *temp_s;
-	unsigned char *temp_d;
+	unsigned char	*temp_s;
+	unsigned char	*temp_d;
 
 	temp_s = (unsigned char *)src;
 	temp_d = (unsigned char *)dest;

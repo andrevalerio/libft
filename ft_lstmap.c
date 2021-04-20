@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 23:02:18 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/19 12:24:41 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:38:18 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new;
+	t_list	*new;
 
 	if (!lst)
 		return (NULL);

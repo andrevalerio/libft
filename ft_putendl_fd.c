@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 15:53:20 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/18 19:25:47 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:37:53 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t length;
+	size_t	length;
 
 	if (s)
 	{
