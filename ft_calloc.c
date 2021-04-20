@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 00:57:38 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/13 23:28:57 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:42:52 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *ptr;
+	void	*ptr;
 
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)

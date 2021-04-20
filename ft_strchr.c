@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 00:50:16 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/18 22:54:58 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:43:34 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*(s + i) != '\0')

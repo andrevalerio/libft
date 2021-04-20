@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 00:50:41 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/14 12:51:40 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:44:02 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dst_l;
-	size_t i;
-	size_t j;
+	size_t	dst_l;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;

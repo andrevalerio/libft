@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 00:58:33 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/18 15:50:34 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:42:27 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 	int		i;
 
-	dup = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	dup = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (dup == NULL)
 		return (NULL);
 	i = 0;
