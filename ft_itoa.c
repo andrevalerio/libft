@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 23:40:39 by avalerio          #+#    #+#             */
-/*   Updated: 2021/02/17 12:02:46 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:30:47 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_intlen(int n)
 	return (length);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	n_len;
 	unsigned int	n_temp;
@@ -42,7 +42,8 @@ char		*ft_itoa(int n)
 	char			*str;
 
 	n_len = ft_intlen(n);
-	if (!(str = malloc(sizeof(char) * (n_len + 1))))
+	str = malloc(sizeof(char) * (n_len + 1));
+	if (str == NULL)
 		return (NULL);
 	str[n_len] = '\0';
 	is_negative = 0;
