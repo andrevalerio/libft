@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 23:03:03 by avalerio          #+#    #+#             */
-/*   Updated: 2021/04/26 20:59:09 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/04/26 21:06:11 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	*ft_free(char **words)
 	return (NULL);
 }
 
-static void	wds_gen(char **wds, char *s, char c)
+static void	wds_gen(char **wds, const char *s, char c)
 {
 	int	i;
 	int	j;
@@ -72,7 +72,10 @@ static void	wds_gen(char **wds, char *s, char c)
 		{
 			wds[i] = (char *)malloc(sizeof(char) * (w_len(s, c) + 1));
 			if (wds[i] == NULL)
-				return (ft_free(wds));
+			{
+				ft_free(wds);
+				break ;
+			}
 			while (*s && *s != c)
 				wds[i][j++] = (char)*s++;
 			wds[i][j] = '\0';
@@ -91,5 +94,7 @@ char	**ft_split(char const *s, char c)
 	if (!s || wds == NULL)
 		return (NULL);
 	wds_gen(wds, s, c);
-	return (wds);
+	if (wds != NULL)
+		return (wds);
+	return (NULL);
 }
