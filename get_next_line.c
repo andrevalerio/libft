@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 21:11:07 by avalerio          #+#    #+#             */
-/*   Updated: 2021/05/13 21:15:20 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/06/02 21:55:06 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,13 @@ static char	*static_upd(char *line_buff)
 	return (new);
 }
 
+static int	check_read_rt(int read_rt)
+{
+	if (read_rt == 0)
+		return (0);
+	return (1);
+}
+
 int	get_next_line(int fd, char **line)
 {
 	int			read_rt;
@@ -85,12 +92,14 @@ int	get_next_line(int fd, char **line)
 
 	if (fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (-1);
-	if (!(read_buff = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
+	read_buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (read_buff == NULL)
 		return (-1);
 	read_rt = 1;
 	while (!line_check(line_buff) && read_rt != 0)
 	{
-		if ((read_rt = read(fd, read_buff, BUFFER_SIZE)) == -1)
+		read_rt = read(fd, read_buff, BUFFER_SIZE);
+		if (read_rt == -1)
 		{
 			free(read_buff);
 			return (-1);
@@ -101,7 +110,5 @@ int	get_next_line(int fd, char **line)
 	free(read_buff);
 	*line = line_gen(line_buff);
 	line_buff = static_upd(line_buff);
-	if (read_rt == 0)
-		return (0);
-	return (1);
+	return (check_read_rt(read_rt));
 }
