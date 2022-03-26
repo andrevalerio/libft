@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 22:21:29 by avalerio          #+#    #+#             */
-/*   Updated: 2021/05/13 21:25:26 by avalerio         ###   ########.fr       */
+/*   Updated: 2022/01/15 18:49:22 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 char				*strjoin_free(char *s1_stc, char *s2);
 int					get_next_line(int fd, char **line);
+int					count_wds(char const *str, char c);
 
 #endif

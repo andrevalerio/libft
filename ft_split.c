@@ -6,13 +6,13 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 23:03:03 by avalerio          #+#    #+#             */
-/*   Updated: 2021/04/26 21:06:11 by avalerio         ###   ########.fr       */
+/*   Updated: 2022/01/15 18:48:27 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_wds(char const *str, char c)
+int	count_wds(char const *str, char c)
 {
 	int	words;
 	int	is_word;

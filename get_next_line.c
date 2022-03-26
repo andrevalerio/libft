@@ -6,7 +6,7 @@
 /*   By: avalerio <avalerio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 21:11:07 by avalerio          #+#    #+#             */
-/*   Updated: 2021/10/16 14:35:59 by avalerio         ###   ########.fr       */
+/*   Updated: 2021/11/02 18:45:48 by avalerio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ static char	*line_gen(char *line)
 		i++;
 	new = malloc(sizeof(char) * (i + 1));
 	if (new == NULL)
+	{
+		free(new);
 		return (NULL);
+	}
 	i = 0;
 	while (line[i] && line[i] != '\n')
 	{
